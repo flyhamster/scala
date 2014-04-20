@@ -6,13 +6,12 @@ object Problem_2 {
     var a = 1
     var b = 2
     var sum = 0
-    for (i <- 2 to 4000000; if (b <= 4000000)) {
-      if (b % 2 == 0) {
-        sum += b
-      }
+    while (b <= 4000000) {
+      if (b % 2 == 0) sum += b
       b += a
       a = b - a
     }
+
     println(sum)
   }
 }
