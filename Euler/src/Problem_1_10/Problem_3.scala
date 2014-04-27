@@ -5,12 +5,11 @@ import scala.util.control.Breaks._
 object Problem_3 {
 
   def main(args: Array[String]): Unit = {
-    //        var num = "600851475143".toLong
-
-    var num = 13195
+    var num = "600851475143".toLong
+    //    var num = 13195
     //    ex1(num)
-    //    ex2(num)
-    ex3(num)
+    ex2(num)
+    //    ex3(num)
 
   }
 
@@ -37,18 +36,18 @@ object Problem_3 {
   def ex2(num: Long) = {
     var sqrtNum = math.sqrt(num).toInt
     var array = new Array[Int](sqrtNum)
-    println(sqrtNum)
+    println("sqrtNum : " + sqrtNum)
     for (i <- 2 until array.length; if (array(i) != -1)) {
       for (j <- i + i until array.length by i) {
         array(j) = -1
       }
     }
 
-    for (index <- 0 until array.length) {
-      println(index + " : " + array(index))
-    }
+//    for (index <- 0 until array.length) {
+//      println(index + " : " + array(index))
+//    }
 
-    for (max <- sqrtNum - 1 to 2 by -1; if (array(max) != -1)) {
+    for (max <- sqrtNum - 1 to 2 by -1; if (array(max) != -1); if (num % max == 0)) {
       println(max)
       //      break
     }
