@@ -1,3 +1,8 @@
+/*
+ * The prime factors of 13195 are 5, 7, 13 and 29.
+ *
+ * What is the largest prime factor of the number 600851475143 ?
+ */
 package Problem_1_10
 
 import scala.util.control.Breaks._
@@ -5,11 +10,12 @@ import scala.util.control.Breaks._
 object Problem_3 {
 
   def main(args: Array[String]): Unit = {
-    var num = "600851475143".toLong
+    var num = 600851475143L
     //    var num = 13195
     //    ex1(num)
     ex2(num)
     //    ex3(num)
+    println("end")
 
   }
 
@@ -43,13 +49,15 @@ object Problem_3 {
       }
     }
 
-//    for (index <- 0 until array.length) {
-//      println(index + " : " + array(index))
-//    }
+    //    for (index <- 0 until array.length) {
+    //      println(index + " : " + array(index))
+    //    }
 
-    for (max <- sqrtNum - 1 to 2 by -1; if (array(max) != -1); if (num % max == 0)) {
-      println(max)
-      //      break
+    breakable {
+      for (max <- sqrtNum - 1 to 2 by -1; if (array(max) != -1); if (num % max == 0)) {
+        println(max)
+        break
+      }
     }
   }
 
