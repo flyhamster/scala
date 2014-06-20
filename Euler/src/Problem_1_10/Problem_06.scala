@@ -1,6 +1,6 @@
 package Problem_1_10
 
-object Problem_6 {
+object Problem_06 {
     val LimitValue = 100
     def main(args: Array[String]): Unit = {
         var squareOfSum: Long = 0

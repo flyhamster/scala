@@ -2,7 +2,7 @@ package Problem_1_10
 
 import scala.util.control.Breaks._
 
-object Problem_7 {
+object Problem_07 {
     val LimitValue: Long = 99999999990L
     def main(args: Array[String]): Unit = {
         var array = new Array[Int](math.sqrt(LimitValue).toInt)

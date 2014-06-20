@@ -7,7 +7,7 @@
  */
 package Problem_1_10
 
-object Problem_2 {
+object Problem_02 {
     def main(args: Array[String]): Unit = {
         var a = 1
         var b = 2

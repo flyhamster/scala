@@ -7,7 +7,7 @@ package Problem_1_10
 
 import scala.collection.mutable.ArrayBuffer
 
-object Problem_5 {
+object Problem_05 {
     def main(args: Array[String]): Unit = {
         var result: Long = 1
         for (i <- 2 to 10) {

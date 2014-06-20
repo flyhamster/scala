@@ -7,7 +7,7 @@ package Problem_1_10
 
 import scala.util.control.Breaks._
 
-object Problem_3 {
+object Problem_03 {
     def main(args: Array[String]): Unit = {
         var num = 600851475143L
         //    var num = 13195

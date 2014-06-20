@@ -5,7 +5,7 @@
  */
 package Problem_1_10
 
-object Problem_4 {
+object Problem_04 {
     def main(args: Array[String]): Unit = {
         //    println(isSymmetry(9009))
 

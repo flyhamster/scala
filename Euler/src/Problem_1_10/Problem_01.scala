@@ -4,7 +4,7 @@
  */
 package Problem_1_10
 
-object Problem_1 {
+object Problem_01 {
     def main(args: Array[String]): Unit = {
         var sum = 0
         for (b <- 0 to 9; c <- 0 to 9; d <- 0 to 9) {
