@@ -8,44 +8,23 @@ package Problem_1_10
 import scala.collection.mutable.ArrayBuffer
 
 object Problem_5 {
-
-  def main(args: Array[String]): Unit = {
-
-    var exponentArray = new Array[Int](20)
-    for (i <- 2 to 10) {
-      for (j <- 2 to i; if (i % j == 0); if (i >= j)) {
-
-      }
-    }
-    getPrimeArray(10)
-  }
-
-  def getPrimeArray(num: Int): List[Int] = {
-    var primeArray = Array(num + 1)
-    for (i <- 2 until primeArray.length; if (primeArray(i) != -1)) {
-      for (j <- i + i until primeArray.length by i) {
-        primeArray(j) = -1
-      }
+    def main(args: Array[String]): Unit = {
+        var result: Long = 1
+        for (i <- 2 to 10) {
+            result = lcm(result, i);
+        }
+        println(result);
     }
 
-    var primeArrayBuffer = new ArrayBuffer[Int]()
-//    for (k <- primeArray) {
-//
-//    }
-    
-//    primeArray.foreach(n => if(primeArray[n] != -1)) yield n
-    
-    
-    
-    
-    
-    //    for (k <- 2 until primeArray.length) {
-    //      println(k + " : " + primeArray(k))
-    //    }
+    def lcm(a: Long, b: Long): Long = {
+        return (a * b) / gcd(a, b)
+    }
 
-    //    for(k <- 2 until pri)
-
-//    return primeArrayBuffer
-    return null
-  }
+    def gcd(a: Long, b: Long): Long = {
+        if (b == 0) {
+            return a
+        } else {
+            gcd(b, a % b)
+        }
+    }
 }
