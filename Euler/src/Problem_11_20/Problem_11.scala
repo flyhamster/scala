@@ -6,17 +6,16 @@ object Problem_11 {
         var rowArray = new Array[Int](4)
         var colArray = new Array[Int](4)
         var diagonalArray = new Array[Int](4)
+        var rDiagonalArray = new Array[Int](4)
         var max: Long = 0
+        var i = 0
         for (row <- 0 to 19; col <- 0 to 19) {
-            rowArray(col % 4) = inputArray(row).apply(col)
+            var index = col % 4
+            rowArray(index) = inputArray(row).apply(col)
             var rowMax: Long = multiplyArray(rowArray)
 
-            colArray(col % 4) = inputArray(col).apply(row)
+            colArray(index) = inputArray(col).apply(row)
             var colMax: Long = multiplyArray(colArray)
-
-            if (row < 17 && col < 17) {
-            	
-            }
 
             if (rowMax > max) {
                 max = rowMax
@@ -24,6 +23,23 @@ object Problem_11 {
 
             if (colMax > max) {
                 max = colMax
+            }
+
+            for (i <- 0 to 3; if (row < 17 && col < 17)) {
+                diagonalArray(i) = inputArray(row + (i)).apply(col + i)
+                rDiagonalArray(i) = inputArray(row + 3 - (i)).apply(col + i)
+
+                if (i == 3) {
+                    var diagonalMax: Long = multiplyArray(diagonalArray)
+                    if (diagonalMax > max) {
+                        max = diagonalMax
+                    }
+
+                    var rDiagonalMax: Long = multiplyArray(rDiagonalArray)
+                    if (rDiagonalMax > max) {
+                        max = rDiagonalMax
+                    }
+                }
             }
         }
         println(max)
